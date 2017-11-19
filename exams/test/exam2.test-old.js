@@ -62,12 +62,12 @@ describe('Dev-Pro OpenJS - Exam 2', () => {
             });
         });
 
-        it('It should set isBusy to true on work start', (done) => {
-            project.findParticipant(() => {}, () => { done(); });
+        it('It should set isBusy to true on work start', () => {
+            project.findParticipant(() => {}, () => {});
             expect(project.isBusy).toBe(true);
         });
 
-        it('It should set isBusy to false on work end', (done) => {
+        it('It should set isBusy to false on work end', (done) => {   
             project.findParticipant(() => {}, () => {
                 expect(project.isBusy).toBe(false);
                 done();
@@ -104,8 +104,8 @@ describe('Dev-Pro OpenJS - Exam 2', () => {
             });
         });
 
-        it('It should set isBusy to true on work start', (done) => {
-            project.findParticipants(() => {}, () => { done(); });
+        it('It should set isBusy to true on work start', () => {
+            project.findParticipants(() => {}, () => {});
             expect(project.isBusy).toBe(true);
         });
 
@@ -140,9 +140,9 @@ describe('Dev-Pro OpenJS - Exam 2', () => {
             });
         });
 
-        it('It should set isBusy to true on work start', (done) => {   
+        it('It should set isBusy to true on work start', () => {   
             const participant = { seniorityLevel: 'intermediate' };
-            project.addParticipant(participant, () => { done(); });
+            project.addParticipant(participant, () => {});
             expect(project.isBusy).toBe(true);
         });
 
@@ -177,9 +177,9 @@ describe('Dev-Pro OpenJS - Exam 2', () => {
             });
         });
 
-        it('It should set isBusy to true on work start', (done) => {
+        it('It should set isBusy to true on work start', () => {
             const participant = { seniorityLevel: 'intermediate' };
-            project.removeParticipant(participant, () => { done(); });
+            project.removeParticipant(participant, () => {});
             expect(project.isBusy).toBe(true);
         });
 

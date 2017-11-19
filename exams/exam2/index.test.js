@@ -1,4 +1,4 @@
-const student = require('./exam2/sergey.zotenko');
+const student = require('./exam2/kovalyova');
 
 describe('Dev-Pro OpenJS - Exam 2', () => {
     const { task: project } = student;
@@ -61,18 +61,6 @@ describe('Dev-Pro OpenJS - Exam 2', () => {
                 done();
             });
         });
-
-        it('It should set isBusy to true on work start', (done) => {
-            project.findParticipant(() => {}, () => { done(); });
-            expect(project.isBusy).toBe(true);
-        });
-
-        it('It should set isBusy to false on work end', (done) => {
-            project.findParticipant(() => {}, () => {
-                expect(project.isBusy).toBe(false);
-                done();
-            });
-        });
     });
 
     describe('Method findParticipants', () => {
@@ -103,18 +91,6 @@ describe('Dev-Pro OpenJS - Exam 2', () => {
                 done();
             });
         });
-
-        it('It should set isBusy to true on work start', (done) => {
-            project.findParticipants(() => {}, () => { done(); });
-            expect(project.isBusy).toBe(true);
-        });
-
-        it('It should set isBusy to false on work end', (done) => {   
-            project.findParticipants(() => {}, () => {
-                expect(project.isBusy).toBe(false);
-                done();
-            });
-        });
     });
 
     describe('Method addParticipant', () => {
@@ -139,20 +115,6 @@ describe('Dev-Pro OpenJS - Exam 2', () => {
                 done();
             });
         });
-
-        it('It should set isBusy to true on work start', (done) => {   
-            const participant = { seniorityLevel: 'intermediate' };
-            project.addParticipant(participant, () => { done(); });
-            expect(project.isBusy).toBe(true);
-        });
-
-        it('It should set isBusy to false on work end', (done) => {   
-            const participant = { seniorityLevel: 'intermediate' };
-            project.addParticipant(participant, () => {
-                expect(project.isBusy).toBe(false);
-                done();
-            });
-        });
     });
 
     describe('Method removeParticipant', () => {
@@ -173,20 +135,6 @@ describe('Dev-Pro OpenJS - Exam 2', () => {
             project.removeParticipant(participant, (removedParticipant) => {
                 expect(project.participants).toEqual(participants);
                 expect(removedParticipant).toBeNull();
-                done();
-            });
-        });
-
-        it('It should set isBusy to true on work start', (done) => {
-            const participant = { seniorityLevel: 'intermediate' };
-            project.removeParticipant(participant, () => { done(); });
-            expect(project.isBusy).toBe(true);
-        });
-
-        it('It should set isBusy to false on work end', (done) => {   
-            const participant = { seniorityLevel: 'intermediate' };
-            project.removeParticipant(participant, () => {
-                expect(project.isBusy).toBe(false);
                 done();
             });
         });
